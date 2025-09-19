@@ -42,4 +42,18 @@ public class Hotel {
     @Column(nullable = false)
     private Boolean active;
 
+    CREATE TABLE hotel (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    city VARCHAR(255),
+    photos TEXT[],
+    amenities TEXT[],
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    -- Embedded fields from HotelContactInfo will expand here, e.g.
+    -- contact_email VARCHAR(255),
+    -- contact_phone VARCHAR(50),
+    active BOOLEAN NOT NULL
+);
+
 }
