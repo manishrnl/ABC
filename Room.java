@@ -47,4 +47,14 @@ public class Room {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    CREATE TABLE room (
+    id BIGSERIAL PRIMARY KEY,
+    room_number VARCHAR(255),
+    hotel_id BIGINT NOT NULL,
+    CONSTRAINT fk_room_hotel
+        FOREIGN KEY (hotel_id)
+        REFERENCES hotel(id)
+        ON DELETE CASCADE
+);
+
 }
